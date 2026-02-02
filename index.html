@@ -511,25 +511,49 @@
             height: 16px;
             border-radius: 4px;
         }
+
+        /* Mobile Reordering & Config Hiding */
+        @media (max-width: 768px) {
+            .grid {
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Prioriza el calendario (segunda opción después del menú) */
+            .main-content {
+                order: 1;
+                margin-bottom: 2rem;
+            }
+
+            /* Formulario después */
+            .sidebar {
+                order: 2;
+            }
+        }
+
+        /* Ocultar configuración al usuario final */
+        #btn-config-tab {
+            display: none !important;
+        }
     </style>
 </head>
 
 <body>
     <div class="header">
-        <h1>🏖️ Sistema de Reservas - Laguna Azul</h1>
-        <p>Panel de Administración</p>
+        <h1>🏖️ Reservas Laguna Azul</h1>
     </div>
 
     <div class="container">
         <div class="tabs">
-            <button class="tab active" onclick="showTab('reservar')">📅 Nueva Reserva</button>
-            <button class="tab" onclick="showTab('cancelar')">❌ Cancelar Reserva</button>
-            <button class="tab" onclick="showTab('config')">⚙️ Configuración</button>
+            <button class="tab active" onclick="showTab('reservar')">📅 Reservar</button>
+            <button class="tab" onclick="showTab('cancelar')">❌ Cancelar</button>
+            <button class="tab" id="btn-config-tab" onclick="showTab('config')">⚙️ Configuración</button>
         </div>
 
         <!-- TAB: RESERVAR -->
         <div id="tab-reservar" class="tab-content">
             <div class="grid">
+                <!-- En móvil: Sidebar va DESPUÉS (Order 2) -->
                 <div class="sidebar">
                     <div class="card">
                         <h2>📝 Datos del Huésped</h2>

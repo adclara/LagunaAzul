@@ -14,7 +14,7 @@ const ADMIN_EMAILS = [
 const PROPERTY_CONFIG = {
   name: "Apartamento Laguna Azul",
   address: "Tucacas 2047, Falcón, Venezuela | Edificación Residencial Laguna Azul, APT 2-A",
-  mapLink: "https://www.google.com/maps/place/Edificio+Laguna+Azul/@10.741804,-68.3187878,21z/data=!4m10!1m2!2m1!1sresidencia+lago+azul+tucacas!3m6!1s0x8e810fc3ff8fb6fb:0x9f8907ff33e2473e!8m2!3d10.7418597!4d-68.3185418"
+  mapLink: "https://maps.app.goo.gl/xf9NApE1hZfSS4Qx5?g_st=am"
 };
 
 // --- 2. AYUDAS ---
