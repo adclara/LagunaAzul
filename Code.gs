@@ -146,11 +146,36 @@ ${PROPERTY_CONFIG.mapLink}
      ------------------------
   `;
 
+  // URL de la imagen (asegúrate de que GitHub Pages esté activo)
+  const headerImageUrl = "https://adclara.github.io/LagunaAzul/assets/header_email.jpg";
+  
+  const htmlBody = `
+<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
+  <div style="text-align: center; margin-bottom: 20px;">
+    <img src="${headerImageUrl}" alt="Laguna Azul" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  </div>
+  
+  <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #e9ecef; white-space: pre-wrap; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.5;">
+${emailBody}
+  </div>
+
+  <div style="margin-top: 30px; text-align: center; font-size: 18px; color: #007bff; font-weight: bold;">
+    <p>¡Muchas gracias y esperamos que tenga unas buenas vacaciones!</p>
+  </div>
+  
+  <div style="margin-top: 20px; text-align: center; font-size: 12px; color: #999;">
+    <p>Laguna Azul - Tucacas, Venezuela</p>
+  </div>
+</div>
+  `;
+
   const recipients = [...ADMIN_EMAILS, data.email].join(',');
+  
   MailApp.sendEmail({
     to: recipients,
     subject: `✅ Reserva Confirmada #${reservationId} - Laguna Azul`,
-    body: emailBody
+    body: emailBody, // Version texto plano como respaldo
+    htmlBody: htmlBody // Version HTML con imagen
   });
 
   return getResponse({status: 'success', reservation: {id: reservationId}});
