@@ -147,7 +147,7 @@ ${PROPERTY_CONFIG.mapLink}
   `;
 
   // URL de la imagen (asegúrate de que GitHub Pages esté activo)
-  const headerImageUrl = "https://adclara.github.io/LagunaAzul/assets/header_email.jpg";
+  const headerImageUrl = "https://adclara.github.io/LagunaAzul/assets/header_email.png";
   
   const htmlBody = `
 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
